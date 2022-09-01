@@ -1,4 +1,11 @@
 import { createApp } from "vue";
-import SFCButton from "./SFCButton.vue";
-
-createApp(SFCButton).mount("#app");
+import ExcaliburUI from "./entry";
+createApp({
+  template: `
+            <div>
+                <MyButton>普通按钮</MyButton>
+            </div>
+        `,
+})
+  .use(ExcaliburUI)
+  .mount("#app");
