@@ -1,7 +1,27 @@
 import { defineComponent, PropType, toRefs } from "vue";
 import "uno.css";
+
+export type IColor =
+  | "black"
+  | "gray"
+  | "red"
+  | "green"
+  | "yellow"
+  | "blue"
+  | "indigo"
+  | "purple"
+  | "pink";
+
+export const props = {
+  color: {
+    type: String as PropType<IColor>,
+    default: "blue",
+  },
+};
+
 export default defineComponent({
   name: "SButton",
+  props,
   setup(props, { slots }) {
     return () => (
       <button

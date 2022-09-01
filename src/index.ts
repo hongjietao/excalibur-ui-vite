@@ -1,5 +1,6 @@
-import { createApp } from "vue";
-import ExcaliburUI from "./entry";
+import { createApp } from "vue/dist/vue.esm-bundler.js";
+import ExcaliburUI, { MyButton } from "./entry";
+
 createApp({
   template: `
             <div>

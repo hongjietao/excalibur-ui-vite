@@ -2,7 +2,8 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { presetUno, presetAttributify, presetIcons } from "unocss";
-import Unocss from "unocss/vite";
+// import Unocss from "unocss/vite";
+import Unocss from "./config/unocss";
 
 // https://vitejs.dev/config/
 
@@ -23,9 +24,7 @@ export default defineConfig({
     }),
     vue(),
     // 添加UnoCSS插件
-    Unocss({
-      presets: [presetUno(), presetAttributify(), presetIcons()],
-    }),
+    Unocss(),
   ],
 
   // 添加库模式配置
@@ -38,7 +37,7 @@ export default defineConfig({
       name: "ExcaliburUI",
       fileName: "excalibur-ui",
       // 导出模块格式
-      formats: ["esm", "umd", "iife"],
+      formats: ["es", "umd", "iife"],
     },
   },
 });
