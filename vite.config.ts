@@ -18,11 +18,12 @@ const rollupOptions = {
 
 export default defineConfig({
   plugins: [
+    vue(),
     // 添加JSX插件
     vueJsx({
       // options are passed on to @vue/babel-plugin-jsx
     }),
-    vue(),
+
     // 添加UnoCSS插件
     Unocss(),
   ],
@@ -32,12 +33,13 @@ export default defineConfig({
   build: {
     rollupOptions,
     minify: false,
+    cssCodeSplit: true,
     lib: {
       entry: "./src/entry.ts",
       name: "ExcaliburUI",
       fileName: "excalibur-ui",
       // 导出模块格式
-      formats: ["es", "umd", "iife"],
+      formats: ["esm", "umd", "iife"],
     },
   },
 });
